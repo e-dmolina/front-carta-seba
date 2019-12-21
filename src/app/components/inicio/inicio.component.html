@@ -1,0 +1,79 @@
+<!--nav bar-->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
+    <a class="navbar-brand" href="#">
+        <img src="../../../assets/img/logo.jpeg" width="40" height="40" class="d-inline-block align-top" alt="">
+        Menú
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#Pizzas">Pizzas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Empanadas">Empanadas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Lomos">Lomos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Hamburguesas y Sandwichs">Hamburguesas y Sandwichs</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Papas">Papas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Picadas">Picadas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#Bebidas">Bebidas</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Fin de navbar -->
+
+<!-- Galería de Productos -->
+<div class="card-columns animated fadeIn">
+    <div class="card" *ngFor="let cat of categorias">
+        <a name="{{cat.nombre}}"></a>
+        <img [src]="cat.img" class="card-img-top" alt="{{cat.nombre}}">
+        <div class="card-body">
+            <h5 class="card-title"><b>{{cat.nombre}}</b></h5>
+            <div class="row" *ngIf="cat.nombre == 'Pizzas' || cat.nombre == 'Empanadas'">
+                <div class="col-6"></div>
+                <div class="col-3"><b>Entera</b></div>
+                <div class="col-3"><b>Media</b></div>
+            </div>
+            <div class="card-row" *ngFor="let item of productos">
+                <div class="row" *ngIf="cat.nombre == item.categoria">
+                    <div class="col-6">
+                        <li>{{item.nombre}}</li>
+                    </div>
+                    <div class="col-3">
+                        <li>{{item.precioCompleto}}</li>
+                    </div>
+                    <div class="col-3">
+                        <li>{{item.precioMitad}}</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin de Galería de Productos -->
+
+<!-- Footer -->
+<footer class="page-footer font-small indigo pt-4 bg-dark animated fadeIn">
+    <!-- Footer Saludo -->
+    <div class="container text-center">
+        <h2>Muchas gracias por elegirnos!</h2>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="">DY</a>
+    </div>
+</footer>
