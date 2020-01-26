@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private url = 'http://159.89.226.54:3000/api/login';
+  private url = 'https://laesquinaelmejorsabor.com/api/login';
   userToken:string;
 
   constructor( private http:HttpClient ) {
